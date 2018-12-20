@@ -1,33 +1,38 @@
 # bodycalc
 
+this app calculate BMR.BMI,Normal weight.
+
+check here.
+[https://ryokryok.github.io/bodycalc/](https://ryokryok.github.io/bodycalc/)
+
 ## Project setup
 ```
-npm install
+yarn
 ```
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+yarn serve
 ```
 
 ### Compiles and minifies for production
 ```
-npm run build
+yarn build
 ```
 
 ### Run your tests
 ```
-npm run test
+yarn test
 ```
 
 ### Lints and fixes files
 ```
-npm run lint
+yarn lint
 ```
 
 ### Run your unit tests
 ```
-npm run test:unit
+yarn test:unit
 ```
 
 ### Customize configuration
