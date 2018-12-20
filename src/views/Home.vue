@@ -4,42 +4,38 @@
       <div class="container">
         <h1 class="title">BodyCalc</h1>
       </div>
-    </section>
-    <section class="section">
       <div class="continer">
         <div class="field">
           <div class="control">
             <label class="radio">
-                        <input type="radio" name="question" value="0" v-model="human.sex">
-                        Man
-                      </label>
+                          <input type="radio" name="question" value="0" v-model="human.sex">
+                          Man
+                        </label>
             <label class="radio">
-                        <input type="radio" name="question" value="1" v-model="human.sex">
-                        Woman
-                      </label>
+                          <input type="radio" name="question" value="1" v-model="human.sex">
+                          Woman
+                        </label>
           </div>
         </div>
         <div class="field">
           <label class="label">Height (cm)</label>
           <div class="control">
-            <input class="input" type="number" placeholder="cm" v-model="human.height">
+            <input class="input" type="number" placeholder="cm" v-model.number="human.height">
           </div>
         </div>
         <div class="field">
           <label class="label">Weight (kg)</label>
           <div class="control">
-            <input class="input" type="number" placeholder="kg" v-model="human.weight">
+            <input class="input" type="number" placeholder="kg" v-model.number="human.weight">
           </div>
         </div>
         <div class="field">
           <label class="label">Age</label>
           <div class="control">
-            <input class="input" type="number" placeholder v-model="human.age">
+            <input class="input" type="number" placeholder v-model.number="human.age">
           </div>
         </div>
       </div>
-    </section>
-    <section class="section">
       <div class="container" v-if="this.human.height != 0">
         <h1 class="title is-4">BMR is {{calc}} Kcal/day</h1>
         <h1 class="title is-4">BMI {{ bmi }}</h1>
@@ -103,7 +99,7 @@
           this.human.weight != 0 &&
           this.human.height != 0
         ) {
-          return (this.human.weight / ((this.human.height / 100) * (this.human.height / 100))).toFixed(1) ;
+          return (this.human.weight / ((this.human.height / 100) * (this.human.height / 100))).toFixed(1);
         } else {
           return 0;
         }
