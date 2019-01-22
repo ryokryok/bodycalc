@@ -2,50 +2,50 @@
   <div class="home">
     <section class="section">
       <div class="container">
-        <h1 class="title">BodyCalc</h1>
+        <h1 class="title is-2">BodyCalc</h1>
+        <span class="is-5">-適正体重、BMI、基礎代謝を計算するサイト-</span>
+
+      </div>
+      <div class="container" v-if="this.human.height != 0">
+        <h1 class="title is-4">適正体重 : {{idealWeight* 18.5}}-{{ idealWeight*25.0 }} Kg</h1>
+        <h1 class="title is-4">BMI : {{ bmi }}</h1>
+        <h1 class="title is-4">基礎代謝 : {{calc}} Kcal/day</h1>
+      </div>
+      <div class="container" v-else>
+        <h2 class="title is-5">
+          フォームに入力してください！
+        </h2>
       </div>
       <div class="continer">
         <div class="field">
           <div class="control">
             <label class="radio">
-                          <input type="radio" name="question" value="0" v-model="human.sex">
-                          Man
-                        </label>
+                            <input type="radio" name="question" value="0" v-model="human.sex">
+                            男性
+                          </label>
             <label class="radio">
-                          <input type="radio" name="question" value="1" v-model="human.sex">
-                          Woman
-                        </label>
+                            <input type="radio" name="question" value="1" v-model="human.sex">
+                            女性
+                          </label>
           </div>
         </div>
         <div class="field">
-          <label class="label">Height (cm)</label>
           <div class="control">
-            <input class="input" type="number" placeholder="cm" v-model.number="human.height">
+            <input class="input" type="number" placeholder="身長(cm)" v-model.number="human.height">
           </div>
         </div>
         <div class="field">
-          <label class="label">Weight (kg)</label>
           <div class="control">
-            <input class="input" type="number" placeholder="kg" v-model.number="human.weight">
+            <input class="input" type="number" placeholder="体重(kg)" v-model.number="human.weight">
           </div>
         </div>
         <div class="field">
-          <label class="label">Age</label>
           <div class="control">
-            <input class="input" type="number" placeholder v-model.number="human.age">
+            <input class="input" type="number" placeholder="年齢" v-model.number="human.age">
           </div>
         </div>
       </div>
-      <div class="container" v-if="this.human.height != 0">
-        <h1 class="title is-4">BMR is {{calc}} Kcal/day</h1>
-        <h1 class="title is-4">BMI {{ bmi }}</h1>
-        <h1 class="title is-4">{{idealWeight* 18.5}}-{{ idealWeight*25.0 }} Kg is normal weight</h1>
-      </div>
-      <div class="container" v-else>
-        <h1 class="title">
-          Please input!
-        </h1>
-      </div>
+  
     </section>
   </div>
 </template>
@@ -58,9 +58,9 @@
       return {
         human: {
           sex: "0",
-          height: 0,
-          weight: 0,
-          age: 0,
+          height: '',
+          weight: '',
+          age: '',
         }
       };
     },
